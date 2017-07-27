@@ -1,10 +1,10 @@
 # sdp-react-iscroll
 ## description
-integrage iscroll to react, and add scroll botttom to load more and pull down to refresh
+integrage iscroll to react, and add scroll bottom to load more and pull down to refresh
 ## how to use
 `npm install sdp-react-iscroll`
 ## example
-```
+``` JSX
 import React, { Component } from 'react';
 import ReactIscroll from 'sdp-react-iscroll';
 import 'sdp-react-iscroll/dist/react-iscroll.css';

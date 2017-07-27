@@ -41,7 +41,7 @@ class ReactIscroll extends Component {
     });
     this.instance.refresh();
     this.instance.on('scroll', () => {
-      console.log(this.instance.y);
+      // console.log(this.instance.y);
       if (this.instance.y > 50) {
         this.needRefresh = true;
         this.setState({

@@ -7,9 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var nodeModulesDir = path.join(__dirname, 'node_modules');
 var webackConfig = {
   entry: {
-    'css/base': './src/components/style/index.less',
-    'css/toast': './src/components/toast/toast.less',
-    'css/loading': './src/components/loading/loading.less',
+    'react-iscroll': './src/components/react-iscroll/react-iscroll.less',
   },
   output: {
     path: './dist',

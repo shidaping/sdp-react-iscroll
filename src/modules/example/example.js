@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import ReactIscroll from '../../../lib';
+// import '../../../dist/react-iscroll.css';
 import ReactIscroll from 'components/react-iscroll';
 import 'components/react-iscroll/react-iscroll.less';
 import './example.less';
