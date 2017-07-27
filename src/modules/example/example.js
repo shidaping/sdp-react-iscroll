@@ -6,6 +6,28 @@ import './example.less';
 class Example extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: Array.from(Array(parseInt(Math.random() * 100 + 50)).keys())
+    }
+    this.refresh = this.refresh.bind(this);
+    this.loadmore = this.loadmore.bind(this);
+  }
+  refresh(){
+    console.log('refresh');
+    this.setState({
+      data: Array.from(Array(parseInt(Math.random() * 100 + 50)).keys()),
+    }) 
+  }
+  componentDidUpdate(){
+    this.apiReactIscroll.getInstance().refresh();
+  }
+  loadmore(){
+    console.log('loadmore')
+    this.setState({
+      data: this.state.data.concat(  
+        Array.from(Array(parseInt(Math.random() * 100 + 50)).keys()),
+      )
+    })
   }
   render() {
     return (
@@ -15,13 +37,15 @@ class Example extends Component {
         </div>
         <ReactIscroll
           className="app-content"
+          onRefresh={this.refresh}
+          onLoadmore = {this.loadmore}
           api={(api) => {
             this.apiReactIscroll = api;
           }}
         >
           <ul>
-            {Array.from(Array(100).keys()).map((item) => (
-              <li key={item}>nav{item}</li>
+            {this.state.data.map((item,i) => (
+              <li key={i}>nav{item}</li>
             ))}
           </ul>
         </ReactIscroll>
